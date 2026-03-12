@@ -19,6 +19,7 @@ import {
 import { DEVELOPMENTS, Development, UnitType } from './types';
 import { cn } from './lib/utils';
 import VirtualTourViewer from './components/VirtualTourViewer';
+import BlogPage from './components/BlogPage';
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,6 +27,7 @@ export default function App() {
   const [selectedDevelopment, setSelectedDevelopment] = useState<Development | null>(null);
   const [selectedUnit, setSelectedUnit] = useState<UnitType | null>(null);
   const [isTourOpen, setIsTourOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState<'home' | 'blog'>('home');
 
   const cities = ['All', 'Ludhiana', 'Chandigarh', 'Mohali'];
 
@@ -56,11 +58,46 @@ export default function App() {
   const handleBackToDevelopments = () => {
     setSelectedDevelopment(null);
     setSelectedUnit(null);
+    setCurrentPage('home');
   };
 
   const handleBackToUnits = () => {
     setSelectedUnit(null);
   };
+
+  if (currentPage === 'blog') {
+    return (
+      <div className="min-h-screen bg-zinc-50 font-sans">
+        {/* Navbar */}
+        <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-zinc-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center gap-2 cursor-pointer" onClick={() => setCurrentPage('home')}>
+                <div className="w-28 h-12 bg-zinc-900 rounded-lg flex items-center justify-center">
+                  <img 
+                    src="src\assets\design_ex.png" 
+                    alt="Company Logo" 
+                    className="w-28 h-28 object-contain"
+                  />
+                </div>
+              </div>
+              <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
+                <button onClick={() => setCurrentPage('home')} className="hover:text-zinc-900 transition-colors">Developments</button>
+                <a href="#" className="hover:text-zinc-900 transition-colors">Developers</a>
+                <a href="#" className="hover:text-zinc-900 transition-colors">Cities</a>
+                <button onClick={() => setCurrentPage('blog')} className="text-zinc-900">Blog</button>
+              </div>
+              <button className="bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-zinc-800 transition-all">
+                Contact Expert
+              </button>
+            </div>
+          </div>
+        </nav>
+        
+        <BlogPage onBack={() => setCurrentPage('home')} />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-zinc-50 font-sans">
@@ -90,10 +127,10 @@ export default function App() {
           
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
-              <a href="#" className="text-zinc-900">Developments</a>
+              <button onClick={() => setCurrentPage('home')} className={currentPage === 'home' ? 'text-zinc-900' : 'hover:text-zinc-900 transition-colors'}>Developments</button>
               <a href="#" className="hover:text-zinc-900 transition-colors">Developers</a>
               <a href="#" className="hover:text-zinc-900 transition-colors">Cities</a>
-              <a href="#" className="hover:text-zinc-900 transition-colors">Insights</a>
+              <button onClick={() => setCurrentPage('blog')} className={currentPage === 'blog' ? 'text-zinc-900' : 'hover:text-zinc-900 transition-colors'}>Blog</button>
             </div>
             <button className="bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-zinc-800 transition-all">
               Contact Expert
@@ -365,7 +402,7 @@ export default function App() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      setIsTourOpen(true);
+                      window.open('https://design-ex-web-25sb.vercel.app/', '_blank');
                     }}
                     className="bg-white/90 backdrop-blur-md text-zinc-900 px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-white transition-all shadow-xl scale-90 group-hover:scale-100 duration-300"
                   >
