@@ -1,5 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+
+import { Routes, Route } from "react-router-dom";
+import Blog from "./pages/blog";
 import {
   Search,
   MapPin,
@@ -19,6 +22,8 @@ import {
 import { DEVELOPMENTS, Development, UnitType } from './types';
 import { cn } from './lib/utils';
 import VirtualTourViewer from './components/VirtualTourViewer';
+
+
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -80,14 +85,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2 cursor-pointer" onClick={handleBackToDevelopments}>
-           <div className="w-28 h-12 bg-zinc-900 rounded-lg flex items-center justify-center">
-  <img 
-    src="src\assets\design_ex.png" 
-    alt="Company Logo" 
-    className="w-28 h-28 object-contain"
-  />
-</div>
-          
+              <div className="w-28 h-12 bg-zinc-900 rounded-lg flex items-center justify-center">
+                <img
+                  src="src\assets\design_ex.png"
+                  alt="Company Logo"
+                  className="w-28 h-28 object-contain"
+                />
+              </div>
+
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
               <a href="#" className="text-zinc-900">Developments</a>
@@ -365,7 +370,8 @@ export default function App() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      setIsTourOpen(true);
+                      //setIsTourOpen(true);
+                      window.open("https://design-ex-web-25sb.vercel.app/", "_blank", "noopener,noreferrer");
                     }}
                     className="bg-white/90 backdrop-blur-md text-zinc-900 px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-white transition-all shadow-xl scale-90 group-hover:scale-100 duration-300"
                   >
@@ -376,7 +382,20 @@ export default function App() {
               </div>
 
               <div className="md:w-1/2 p-8 overflow-y-auto">
-                <div className="mb-6">
+                <div className="mb-8">
+                  <h4 className="font-bold mb-3">Floor Plan</h4>
+
+                  <div className="w-full h-[500px] border rounded-2xl overflow-hidden">
+                    <iframe
+                      src="/public/brochure.pdf"
+                      className="w-full h-full"
+                      title="Floor Plan PDF"
+                    />
+                  </div>
+                </div>
+
+
+                {/* <div className="mb-6">
                   <span className="text-zinc-500 text-sm font-medium uppercase tracking-widest mb-2 block">{selectedDevelopment?.name}</span>
                   <h2 className="text-3xl font-serif font-bold mb-2">{selectedUnit.bhk} Residence</h2>
                   <div className="flex items-center gap-2 text-zinc-500 mb-4">
@@ -420,7 +439,7 @@ export default function App() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex gap-4 mt-auto">
                   <button className="flex-1 bg-zinc-900 text-white py-4 rounded-2xl font-bold hover:bg-zinc-800 transition-all">
@@ -443,11 +462,11 @@ export default function App() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-28 h-28  rounded-lg flex items-center justify-center">
-                    <img 
-    src="src\assets\design_ex.png" 
-    alt="Company Logo" 
-    className="w-28 h-28 object-contain"
-  />
+                  <img
+                    src="src\assets\design_ex.png"
+                    alt="Company Logo"
+                    className="w-28 h-28 object-contain"
+                  />
                 </div>
                 {/* <span className="text-2xl font-serif font-bold tracking-tight">DesignEX</span> */}
               </div>
