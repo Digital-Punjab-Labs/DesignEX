@@ -421,18 +421,17 @@ export default function App() {
               <div className="md:w-1/2 p-8 overflow-y-auto">
                 <div className="mb-8">
                   <h4 className="font-bold mb-3">Floor Plan</h4>
-
+{/* 
                   <div className="w-full h-[500px] border rounded-2xl overflow-hidden">
                     <iframe
                       src="/public/brochure.pdf"
                       className="w-full h-full"
                       title="Floor Plan PDF"
                     />
-                  </div>
+                  </div> */}
                 </div>
 
-
-                {/* <div className="mb-6">
+ <div className="mb-6">
                   <span className="text-zinc-500 text-sm font-medium uppercase tracking-widest mb-2 block">{selectedDevelopment?.name}</span>
                   <h2 className="text-3xl font-serif font-bold mb-2">{selectedUnit.bhk} Residence</h2>
                   <div className="flex items-center gap-2 text-zinc-500 mb-4">
@@ -476,7 +475,7 @@ export default function App() {
                       </span>
                     ))}
                   </div>
-                </div> */}
+                </div> 
 
                 <div className="flex gap-4 mt-auto">
                   <button className="flex-1 bg-zinc-900 text-white py-4 rounded-2xl font-bold hover:bg-zinc-800 transition-all">
