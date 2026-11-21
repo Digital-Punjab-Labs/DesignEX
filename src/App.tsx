@@ -87,10 +87,10 @@ export default function App() {
                 </div>
               </div>
               <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
-                <button onClick={() => setCurrentPage('home')} className="hover:text-zinc-900 transition-colors">Developments</button>
-                <a href="#" className="hover:text-zinc-900 transition-colors">Developers</a>
-                <a href="#" className="hover:text-zinc-900 transition-colors">Cities</a>
-                <button onClick={() => setCurrentPage('blog')} className="text-zinc-900">Blog</button>
+                <button onClick={() => setCurrentPage('home')} className="hover:text-zinc-900 transition-colors">Home</button>
+                {/* <a href="#" className="hover:text-zinc-900 transition-colors">Ecosystem</a> */}
+                {/* <a href="#" className="hover:text-zinc-900 transition-colors">Cities</a> */}
+                <button onClick={() => setCurrentPage('blog')} className="text-zinc-900">Ecosystem</button>
               </div>
               <button className="bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-zinc-800 transition-all">
                 Contact Expert
@@ -132,10 +132,10 @@ export default function App() {
 
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
-              <button onClick={() => setCurrentPage('home')} className={currentPage === 'home' ? 'text-zinc-900' : 'hover:text-zinc-900 transition-colors'}>Developments</button>
-              <a href="#" className="hover:text-zinc-900 transition-colors">Developers</a>
-              <a href="#" className="hover:text-zinc-900 transition-colors">Cities</a>
-              <button onClick={() => setCurrentPage('blog')} className={currentPage === 'blog' ? 'text-zinc-900' : 'hover:text-zinc-900 transition-colors'}>Blog</button>
+              <button onClick={() => setCurrentPage('home')} className={currentPage === 'home' ? 'text-zinc-900' : 'hover:text-zinc-900 transition-colors'}>Home</button>
+              {/* <a href="#" className="hover:text-zinc-900 transition-colors">Ecosystem</a> */}
+              {/* <a href="#" className="hover:text-zinc-900 transition-colors">Cities</a> */}
+              <button onClick={() => setCurrentPage('blog')} className={currentPage === 'blog' ? 'text-zinc-900' : 'hover:text-zinc-900 transition-colors'}>Ecosystem</button>
             </div>
             <button className="bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-zinc-800 transition-all">
               Contact Expert
@@ -158,20 +158,20 @@ export default function App() {
           </div>
 
           <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <motion.h1
+            <motion.h6
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight"
             >
-              India's Most Iconic Landmarks
-            </motion.h1>
+             An integrated PropTech ecosystem 
+            </motion.h6>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-lg text-white/90 mb-8 max-w-2xl mx-auto font-light"
             >
-              Discover super-luxury high-rise developments from India's premier developers.
+              for developers, investors & channel partners.
             </motion.p>
 
             <motion.div

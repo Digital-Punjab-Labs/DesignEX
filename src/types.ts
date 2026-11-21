@@ -20,7 +20,7 @@ export interface Development {
   mainImage: string;
   description: string;
   amenities: string[];
-  status: 'Under Construction' | 'Ready to Move' | 'Newly Launched';
+  status: 'Coming Soon' | 'Ready to Move' | 'Newly Launched';
   units: UnitType[];
 }
 
@@ -64,14 +64,14 @@ export const DEVELOPMENTS: Development[] = [
   },
   {
     id: 'd2',
-    name: 'World One',
-    developer: 'Lodha Group',
-    location: 'Lower Parel',
-    city: 'Chandigarh',
-    mainImage: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=1200',
-    description: 'World One is a residential skyscraper in Mumbai. It is located in Lower Parel and stands at 280.2 meters.',
+    name: 'Hero Homes Phase 2',
+    developer: 'Hero Realty',
+    location: 'Canal Road',
+    city: 'Ludhiana',
+    mainImage: 'https://blog.herohomes.in/wp-content/uploads/2025/11/b3.jpg',
+    description: 'The Rising Hub for Luxury Apartments in Ludhiana',
     amenities: ['Armani/Casa Interiors', 'Sky Lounge', 'Observatory Deck', 'World-class Spa', 'Private Jets'],
-    status: 'Ready to Move',
+    status: 'Coming Soon',
     units: [
       {
         id: 'u2-3bhk',
@@ -101,14 +101,14 @@ export const DEVELOPMENTS: Development[] = [
   },
   {
     id: 'd3',
-    name: 'Godrej Meridien',
-    developer: 'Godrej Properties',
-    location: 'Sector 106',
-    city: 'Mohali',
-    mainImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
-    description: 'Godrej Meridien is a place of plush residences, that offers some of the finest amenities in the NCR region.',
+    name: 'Solitaire Walk',
+    developer: 'Solitaire Homes',
+    location: 'Model Town',
+    city: 'Ludhiana',
+    mainImage: 'https://content3.jdmagicbox.com/v2/comp/ludhiana/e1/0161px161.x161.250814013223.l1e1/catalogue/solitaire-walk-ludhiana-markets-7xbz4zwycz.jpg',
+    description: 'Solitaire Walk is a 6-acre luxury high-street retail and commercial destination, strategically located near the Gill Flyover in Ludhiana.',
     amenities: ['66,000 sqft Clubhouse', 'Olympic-size Pool', 'Fine Dining', 'Wine Tasting Room', 'Mini Theater'],
-    status: 'Under Construction',
+    status: 'Coming Soon',
     units: [
       {
         id: 'u3-2bhk',
@@ -122,43 +122,43 @@ export const DEVELOPMENTS: Development[] = [
         description: 'Modern 2BHK apartment designed for urban professionals.',
         amenities: ['Clubhouse', 'Swimming Pool', 'Jogging Track', 'Security']
       },
-      {
-        id: 'u3-3bhk',
-        bhk: '3 BHK',
-        price: 25000000,
-        sqft: 1850,
-        beds: 3,
-        baths: 3,
-        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
-        virtualTourImage: 'https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&q=80&w=2000',
-        description: 'Comfortable 3BHK family home with premium fittings.',
-        amenities: ['Park View', 'Kids Play Area', 'Gym', 'Power Backup']
-      }
+      // {
+      //   id: 'u3-3bhk',
+      //   bhk: '3 BHK',
+      //   price: 25000000,
+      //   sqft: 1850,
+      //   beds: 3,
+      //   baths: 3,
+      //   image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
+      //   virtualTourImage: 'https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&q=80&w=2000',
+      //   description: 'Comfortable 3BHK family home with premium fittings.',
+      //   amenities: ['Park View', 'Kids Play Area', 'Gym', 'Power Backup']
+      // }
     ]
   },
-  {
-    id: 'd4',
-    name: 'Prestige Kingfisher Towers',
-    developer: 'Prestige Group',
-    location: 'Lavelle Road',
-    city: 'Mohali',
-    mainImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
-    description: 'Prestige Kingfisher Towers is one of the most premium residential developments in Bengaluru.',
-    amenities: ['Private Lobby', 'Billiards Room', 'Tennis Court', 'Badminton Court', 'Health Club'],
-    status: 'Ready to Move',
-    units: [
-      {
-        id: 'u4-4bhk',
-        bhk: '4 BHK',
-        price: 300000000,
-        sqft: 8300,
-        beds: 4,
-        baths: 5,
-        image: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1200',
-        virtualTourImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000',
-        description: 'Exclusive 4BHK residence occupying an entire floor.',
-        amenities: ['Private Lobby', 'City View', 'Billiards Room', 'Tennis Court']
-      }
-    ]
-  }
+  // {
+  //   id: 'd4',
+  //   name: 'Prestige Kingfisher Towers',
+  //   developer: 'Prestige Group',
+  //   location: 'Lavelle Road',
+  //   city: 'Mohali',
+  //   mainImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+  //   description: 'Prestige Kingfisher Towers is one of the most premium residential developments in Bengaluru.',
+  //   amenities: ['Private Lobby', 'Billiards Room', 'Tennis Court', 'Badminton Court', 'Health Club'],
+  //   status: 'Ready to Move',
+  //   units: [
+  //     {
+  //       id: 'u4-4bhk',
+  //       bhk: '4 BHK',
+  //       price: 300000000,
+  //       sqft: 8300,
+  //       beds: 4,
+  //       baths: 5,
+  //       image: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&q=80&w=1200',
+  //       virtualTourImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000',
+  //       description: 'Exclusive 4BHK residence occupying an entire floor.',
+  //       amenities: ['Private Lobby', 'City View', 'Billiards Room', 'Tennis Court']
+  //     }
+  //   ]
+  // }
 ];

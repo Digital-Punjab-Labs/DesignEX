@@ -6,8 +6,8 @@ interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
-  content: string;
-  author: string;
+
+
   date: string;
   readTime: string;
   image: string;
@@ -17,10 +17,10 @@ interface BlogPost {
 const BLOG_POSTS: BlogPost[] = [
   {
     id: '1',
-    title: 'The Future of High-Rise Living in India',
-    excerpt: 'Exploring how modern architecture is reshaping urban skylines across major Indian cities.',
-    content: 'The landscape of Indian cities is rapidly evolving with the rise of luxury high-rise developments...',
-    author: 'Arjun Sharma',
+    title: '3D Renders',
+    excerpt: 'Photorealistic visuals',
+
+
     date: '2024-01-15',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
@@ -28,35 +28,31 @@ const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '2',
-    title: 'Investment Opportunities in Luxury Real Estate',
-    excerpt: 'Why premium developments are becoming the preferred choice for discerning investors.',
-    content: 'The luxury real estate market in India has shown remarkable resilience and growth...',
-    author: 'Priya Mehta',
+    title: 'Cinematic Walkthroughs',
+    excerpt: 'Emotion-driven storytelling',
+   
     date: '2024-01-12',
     readTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+    image: 'https://5.imimg.com/data5/SELLER/Default/2024/8/446010388/UC/DH/TA/23577762/3d-architectural-services-1000x1000.jpg',
     category: 'Investment'
   },
   {
     id: '3',
-    title: 'Sustainable Design in Modern Developments',
-    excerpt: 'How green building practices are becoming standard in luxury high-rise projects.',
-    content: 'Sustainability is no longer just a buzzword in the real estate industry...',
-    author: 'Rajesh Kumar',
+    title: 'VR Property Tours',
+    excerpt: 'Remote property experience',
     date: '2024-01-10',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800',
+    image: 'https://360pano.in/wp-content/uploads/2024/05/vr-real-estate.jpg',
     category: 'Sustainability'
   },
   {
     id: '4',
-    title: 'Smart Home Technology in Premium Residences',
-    excerpt: 'The integration of IoT and smart systems in luxury apartments and penthouses.',
-    content: 'Technology is revolutionizing the way we live, and luxury residences are at the forefront...',
-    author: 'Neha Gupta',
+    title: 'Interactive Experiences',
+    excerpt: 'Future-ready property showcasing',
+   
     date: '2024-01-08',
     readTime: '4 min read',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+    image: 'https://cdn.sanity.io/images/pjiwic7p/production/92da7fb051712a61fa7cc37caa0fabf538aba77e-721x510.png?auto=format',
     category: 'Technology'
   }
 ];
@@ -89,10 +85,7 @@ export default function BlogPage({ onBack }: BlogPageProps) {
             </span>
             <h1 className="text-4xl font-serif font-bold mb-4">{selectedPost.title}</h1>
             <div className="flex items-center gap-6 text-zinc-500 text-sm">
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                {selectedPost.author}
-              </div>
+           
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 {new Date(selectedPost.date).toLocaleDateString()}
@@ -111,11 +104,7 @@ export default function BlogPage({ onBack }: BlogPageProps) {
             referrerPolicy="no-referrer"
           />
           
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-zinc-600 leading-relaxed">
-              {selectedPost.content}
-            </p>
-          </div>
+       
         </article>
       </motion.div>
     );
@@ -135,10 +124,10 @@ export default function BlogPage({ onBack }: BlogPageProps) {
       </button>
 
       <div className="mb-12">
-        <h1 className="text-4xl font-serif font-bold mb-4">Real Estate Insights</h1>
-        <p className="text-zinc-600 text-lg">
+        <h1 className="text-4xl font-serif font-bold mb-4">Immersive Technology That Accelerates Real Estate Sales</h1>
+        {/* <p className="text-zinc-600 text-lg">
           Stay updated with the latest trends, insights, and developments in luxury real estate.
-        </p>
+        </p> */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -160,23 +149,18 @@ export default function BlogPage({ onBack }: BlogPageProps) {
             
             <div className="p-6">
               <div className="flex items-center justify-between mb-3">
-                <span className="px-2 py-1 bg-zinc-100 text-zinc-700 text-xs rounded-full">
-                  {post.category}
-                </span>
-                <span className="text-xs text-zinc-500">{post.readTime}</span>
+              
+               
               </div>
               
               <h2 className="text-xl font-bold mb-3 line-clamp-2">{post.title}</h2>
               <p className="text-zinc-600 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
               
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-zinc-500 text-xs">
-                  <User className="w-3 h-3" />
-                  {post.author}
-                </div>
-                <div className="flex items-center gap-1 text-zinc-900 text-sm font-medium">
+             
+                {/* <div className="flex items-center gap-1 text-zinc-900 text-sm font-medium">
                   Read More <ArrowRight className="w-4 h-4" />
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.article>
